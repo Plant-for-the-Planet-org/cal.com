@@ -1,7 +1,7 @@
 {
   "name": "Cal.com",
   "description": "Open Source Scheduling",
-  "repository": "https://github.com/calcom/cal.com",
+  "repository": "https://github.com/Plant-for-the-Planet/cal.com",
   "logo": "https://cal.com/android-chrome-512x512.png",
   "keywords": ["react", "typescript", "node", "nextjs", "prisma", "postgres", "trpc"],
   "addons": [
@@ -24,7 +24,15 @@
       "value": "https://HEROKU_APP_NAME.herokuapp.com"
     }
   },
-  "scripts": {
-    "postdeploy": "cd packages/prisma && npx prisma migrate deploy"
-  }
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "free"
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-nodejs"
+    }
+  ]
 }
